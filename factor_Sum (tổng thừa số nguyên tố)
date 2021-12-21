@@ -1,0 +1,30 @@
+// viết hàm thay thế n bằng tổng các thừa số nguyên tố của nó (ví dụ 12=2*2*3 thì 12 sẽ được thay thế bằng số 2+2+3=7)
+
+public class factor_Sum {
+// ham xu ly n
+	public static int solve(int n) { // vd: n = 24
+		int k = 2; 
+		int sum = 0;
+		while(n > 1) {
+			while(n % k == 0) { //24%2 =0 => thỏa || 12%2 =0 => thỏa
+				sum += k; // sum = 2 || sum = 4
+				n /= k; // 24/2 => n=12 || 12/2 => n=6
+			}
+			k++;
+		}
+		return sum; // sum = 5;
+	}
+  // ham xuat n
+	public static int factorSum(int n) { // vd n= 24;
+		while(n != solve(n)) { // 24 != 5 => thỏa || 5 == 5 khong thoa nên tiến tới return
+			n = solve(n); // n = 5
+		}
+		return n; 
+	}
+
+// ham main
+	public static void main(String[] args) {
+		int a = 24;
+		System.out.println(factorSum(a));
+	}
+}
