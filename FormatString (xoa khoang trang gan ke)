@@ -1,0 +1,7 @@
+public static String formatString(String s) {
+		String s1 = s.trim(); // xoa space dau va cuoi
+	    while(s1.indexOf("  ")!=-1){ // tim 2 space gan ke nhau
+	        s1 = s1.replace("  "," "); // thay 2 space thanh 1 space
+	    } 
+	    return s1;
+	}
