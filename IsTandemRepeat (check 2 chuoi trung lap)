@@ -1,0 +1,9 @@
+// thuat toan check xem chuoi do co phai la chuoi trung lap hay khong
+	public static boolean isTandemRepeat(String s) {
+		int n = s.length();
+		if(n % 2 != 0) return false; // nếu lẻ thì sai
+		for(int i = 0; i < n/2; i++) {
+			if(s.charAt(i) != s.charAt(n/2 + i) ) return false;
+		}
+		return true;
+	}
